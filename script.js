@@ -1,21 +1,27 @@
 
-const container = document.createElement("div");
-document.body.appendChild(container);
-container.setAttribute("class", "grid-container");
+const board = document.querySelector('.board');
+board.style.gridTemplateColumns = "repeat(16, 1fr)";
+board.style.gridTemplateRows = "repeat(16, 1fr)";
 
 
-function generateCells(number) {
-    for(let i=0; i < number+1; i++) {
-        const row = document.createElement("tr");
-        row.id = "row" + i;
-        row.setAttribute("class", "grid-item");
-        row.innerHTML = "row " + i;
-        container.appendChild(row);
+
+
+function generateCells() {
+    for(let i=0; i < 256; i++) {
+        let cell = document.createElement('div');
+        cell.setAttribute("class", "cell");
+        cell.style.backgroundColor = 'white';
+        cell.style.border = '1px solid black';
+        board.appendChild(cell)
+
     }
-
 }
 
-generateCells(25);
+const changeCell = document.querySelector('.cell');
+
+
+
+generateCells();
 
 
 

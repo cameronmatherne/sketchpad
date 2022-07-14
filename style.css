@@ -1,4 +1,19 @@
-.grid-container {
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.board {
+  width: 300px;
+  height: 300px;
   display: grid;
 
+}
+
+.buttons {
+  margin: 20px; 
+   
 }
