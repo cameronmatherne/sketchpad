@@ -1,7 +1,10 @@
 
+// global variables that will be used throughout different functions 
 let color = "black";
 const board = document.querySelector('.board');
 
+
+// function to create grid 
 function generateCells() {
 
     board.style.gridTemplateColumns = "repeat(40, 1fr)";
@@ -24,7 +27,19 @@ function clearBoard() {
     cells.style.backgroundColor = 'white';
 }
 
+function changeColor(newColor) {
+    color = newColor;
+}
+
+function resetBoard() {
+
+    location.reload()
+}
+
+
 generateCells();
+
+
 
 
 
