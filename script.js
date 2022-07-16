@@ -1,27 +1,35 @@
 
+let color = "black";
 const board = document.querySelector('.board');
-board.style.gridTemplateColumns = "repeat(16, 1fr)";
-board.style.gridTemplateRows = "repeat(16, 1fr)";
-
-
-
 
 function generateCells() {
-    for(let i=0; i < 256; i++) {
+
+    board.style.gridTemplateColumns = "repeat(40, 1fr)";
+    board.style.gridTemplateRows = "repeat(40, 1fr)";
+
+    for(let i=0; i < 1600; i++) {
         let cell = document.createElement('div');
-        cell.setAttribute("class", "cell");
         cell.style.backgroundColor = 'white';
-        cell.style.border = '1px solid black';
+
         board.appendChild(cell)
+        cell.addEventListener("mouseover", () => {
+            cell.style.backgroundColor = color;   
+        });
 
     }
 }
 
-const changeCell = document.querySelector('.cell');
-
-
+function clearBoard() {
+    const cells = board.querySelectorAll('.div');
+    cells.style.backgroundColor = 'white';
+}
 
 generateCells();
+
+
+
+
+
 
 
 
